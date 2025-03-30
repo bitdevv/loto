@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const TICKET_SIZE = 5;
     const NUMBERS_PER_COLUMN = 15;
     const MAX_NUMBER = 75;
-    const NUM_BALLS_TO_DRAW = 50; // <<< How many numbers to draw in a game
+    const NUM_BALLS_TO_DRAW = 75; // <<< How many numbers to draw in a game
     const COLUMN_LETTERS = ['B', 'I', 'N', 'G', 'O'];
     // REMOVED: const FREE_SPACE_INDEX = { row: 2, col: 2 };
 
