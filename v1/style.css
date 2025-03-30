@@ -1,0 +1,166 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 900px; /* Allow more width */
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.game-area {
+    display: flex;
+    justify-content: space-around; /* Space out sections */
+    align-items: flex-start; /* Align tops */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add gap between sections */
+}
+
+.ticket-section, .drawn-section {
+    flex: 1; /* Allow sections to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* Ticket Table Styling */
+#ticket table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Center table if needed */
+    background-color: #fff;
+}
+
+#ticket th, #ticket td {
+    border: 1px solid #ccc;
+    width: 20%; /* 5 columns */
+    height: 50px; /* Fixed height */
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#ticket th {
+    background-color: #6c757d;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* REMOVED: .free-space style */
+
+#ticket td.matched {
+    background-color: #28a745; /* Green for matched */
+    color: white;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+/* Drawn Numbers Styling */
+#drawnNumbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Spacing between numbers */
+    justify-content: center;
+    max-height: 300px; /* Limit height and allow scrolling */
+    overflow-y: auto; /* Add scroll if needed */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 50px; /* Ensure it has some height even when empty */
+}
+
+.drawn-number {
+    display: inline-block; /* Or inline-flex for alignment */
+    width: 35px;
+    height: 35px;
+    line-height: 35px; /* Vertically center text */
+    text-align: center;
+    border: 1px solid #adb5bd;
+    border-radius: 50%; /* Circle shape */
+    background-color: #f8f9fa;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin: 2px; /* Add small margin if gap isn't enough */
+}
+
+#matchResult {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #17a2b8; /* Changed color slightly */
+    min-height: 1.2em; /* Prevent layout shift */
+}
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+    .game-area {
+        flex-direction: column;
+        align-items: center;
+    }
+    .ticket-section, .drawn-section {
+        width: 90%; /* Take more width when stacked */
+        max-width: 400px;
+    }
+     #ticket td {
+        height: 40px;
+        font-size: 1em;
+    }
+    .drawn-number {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 0.8em;
+    }
+}

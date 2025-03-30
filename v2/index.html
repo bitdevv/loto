@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Lotto Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bingo Lotto</h1>
+
+    <div class="controls">
+        <button id="new-game-btn">Start New Game (Reset All)</button>
+        <button id="add-ticket-btn">Add Ticket (€2)</button>
+        <button id="draw-next-btn" disabled>Draw Next Number</button>
+        <button id="draw-all-btn" disabled>Draw Full Game</button>
+        <button id="clear-stats-btn">Clear Lifetime Stats</button> <!-- Added Clear Stats Button -->
+    </div>
+
+    <div class="game-info">
+        <p>Tickets: <span id="ticket-count">0</span> / 10</p>
+        <p>Total Cost: €<span id="total-cost">0</span></p>
+        <p>Jackpot Draw Number: <span id="jackpot-draw-info">N/A</span></p>
+    </div>
+
+    <!-- Added Lifetime Statistics Section -->
+    <div class="lifetime-stats">
+        <h2>Lifetime Statistics</h2>
+        <p>Total Tickets Bought: <span id="stats-total-tickets">0</span></p>
+        <p>Center Wins: <span id="stats-center-wins">0</span></p>
+        <p>Corners Wins: <span id="stats-corners-wins">0</span></p>
+        <p>Diagonals Wins: <span id="stats-diagonals-wins">0</span></p>
+        <p>One-Missing Wins: <span id="stats-one-missing-wins">0</span></p>
+        <p>Full House Wins: <span id="stats-full-house-wins">0</span></p>
+        <p>Jackpot Wins: <span id="stats-jackpot-wins">0</span></p>
+    </div>
+
+    <div class="main-content">
+        <div class="tickets-area">
+            <h2>Your Tickets</h2>
+            <div id="tickets-display-area">
+                <!-- Tickets will be rendered here by JS -->
+            </div>
+        </div>
+
+        <div class="drawing-area">
+             <div class="drawn-numbers-container">
+                <h2>Drawn Numbers (<span id="draw-count">0</span>/75)</h2>
+                <div id="drawn-numbers-list"></div>
+            </div>
+             <div class="status-container">
+                <h2>Game Status & Wins</h2>
+                <div id="status-messages">
+                    <p>Add tickets and then start drawing!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
